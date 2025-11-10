@@ -1146,7 +1146,7 @@ export function initializeGame(){
         }
       }
       return snapshot;
-    }
+    })();
 
 
     const monsterSnapshot = (()=>{
@@ -1159,7 +1159,7 @@ export function initializeGame(){
         snapshot.projectileIcons = { ...DEFAULT_MONSTER_ICONS };
       }
       return snapshot;
-    }
+    })();
 
 
     const practiceDummySnapshot = practiceDummy ? (()=>{
@@ -20666,7 +20666,7 @@ export function initializeGame(){
             const dy = job.to.y - job.from.y;
             const len = Math.hypot(dx, dy) || 1;
             return { x: dx / len, y: dy / len };
-          }
+          })();
 
       const laneNormal = firstSegment ? { x: firstSegment.normalX, y: firstSegment.normalY }
         : { x: -laneDir.y, y: laneDir.x };
